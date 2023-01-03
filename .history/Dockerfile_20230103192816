@@ -22,13 +22,11 @@ RUN apt-get update && \
 RUN npm install -g npx && \
     npm install -g elm@0.18.0-exp5 --silent
 
-COPY elm-package.json ./
 
+COPY elm-package.json ./
 RUN elm package install -y
 
 COPY . .
-
-RUN elm make Main.elm --output=client/index.js
 
 FROM base AS release
 
