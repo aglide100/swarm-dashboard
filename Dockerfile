@@ -34,6 +34,9 @@ FROM base AS release
 
 WORKDIR /home/node/app
 
+COPY . .
+
+RUN npm install
 COPY --from=dependencies /home/node/app/node_modules node_modules
 COPY --from=elm-build /home/node/app/client/ client
 COPY server server
