@@ -95,4 +95,5 @@ jobs:
           file: ./Node.Dockerfile
           platforms: linux/arm64, linux/amd64, linux/arm/v7
           push: true
-          tags: ghcr.io/aglide100/swarm-dashboard:latest
+          tags: ghcr.io/aglide100/swarm-dashboard:withoutHealthCheck
+          # tags: ghcr.io/aglide100/swarm-dashboard:latest
